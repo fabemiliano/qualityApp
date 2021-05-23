@@ -9,25 +9,38 @@ const host = process.env.DBENDPOINT
 console.log(root, password, database, host)
 
 module.exports = {
+
   "development": {
     "username": root,
     "password": password,
     "database": database,
     "host": host,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    define: {
+      //prevent sequelize from pluralizing table names
+      freezeTableName: true
+    },
   },
   "test": {
     "username": root,
     "password": password,
     "database": database,
     "host": host,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    define: {
+      //prevent sequelize from pluralizing table names
+      freezeTableName: true
+    },
   },
   "production": {
     "username": root,
     "password": password,
     "database": database,
     "host": host,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    define: {
+      //prevent sequelize from pluralizing table names
+      freezeTableName: true
+    },
   }
 }
